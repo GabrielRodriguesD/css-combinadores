@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    min-height: 100vh;
+    /* para deixar o body compreindo pelo menos 100% da janela */
+    background-color: antiquewhite
+    ;
+}
+
+.menu-navegacao{
+    height: 65px;
+    background-color: #38393c;
+    /* é a mesma cor do darkmode do edge */
+}
+
+.menu-navegacao>ul {
+    /* vai estilizar os ul que forem filhos da class .menu-avegação */
+    height: 100%; /*vai usar 100% do espaço do pai*/
+    display: flex;
+    justify-content: flex-end;
+    /* justify-content: center; se for center ele fica no meio*/
+    /* align-items: center; estava impedindo */
+
+}
+
+.menu-navegacao a {
+    /* o espaçoe entre a classe e o "a" significa que é um descendete */
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    color: antiquewhite;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.2rem; /* 120% do tamanho padrão*/
+    padding: 0 1rem; /*1rem = 16px*/
+}
+
+.menu-navegacao a:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: #383935;
+    transition-duration: 3000ms;
+}
+
+.breadcrumbs{
+    height: 50px;
+}
+
+.breadcrumbs>ul{
+    height: 100%;
+    display: flex;
+    margin-inline-start: 1.5rem;
+}
+
+.breadcrumbs li{
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* .breadcrumbs li::after{
+    content: ">";
+    Comando que bota em todos
+} */
+
+/* .breadcrumbs li::last-child::after{
+    content: "";
+    Opção 1
+} */
+
+.breadcrumbs li:not(:last-child)::after{
+    content: ">";
+    /* aplica para todos elementos, menos (não) para o ultimo filho*/
+}
+
+.breadcrumbs a{
+    font-family: "Ubunto", sans-serif;
+    padding: 0 1rem;
+}
+
+.breadcrumbs li:not(:last-child)>a {
+    color: rgb(89, 100, 107);
+}/*aplica para todo <a> filho de <li>, menos (não) para o <a> filho do <li> que é ultimo filho, descendente de .breadcrumbs*/
+
+.breadcrumbs li:last-child>a{
+    background-color:  #38393c;
+    color: antiquewhite;
+    padding: 8px;
+    border-radius: 16px;
+    margin-inline-start: 8px;
+}
+
+
+.breadcrumbs li:last-child>a:hover{
+    text-decoration: none;
+    cursor: default;
+}
+
+.breadcrumbs a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
